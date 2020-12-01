@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+</head>
+
+
+<body>
+    <!-- 이 문서의 비주얼 담당 (보이는 부분 담당)-->
+    <!-- div : 영역을 구분할때 사용, 화면에는 보이지 않음-->
+    <div>
+        <fieldset>
+            <!-- <form action="/login" method="POST"> -->
+            <!-- 서버측 주소와 현재 페이지 주소가 일치하는 경우
+                (restAPI 사용한 경우) action을 생략하면 현재 페이지와 
+                동일한 주소로 요청이 넘어간다.-->   
+                <!--<form action="/loginProc" method="GET">-->
+                <form method="POST">
+                <input type="date" name="udate"/> <br>
+                <input type="text" name="uid" placeholder="아이디"/> <br>
+                <input type="password" name="upw" placeholder="비밀번호"/> <br>
+                <input type="submit" value="로그인 버튼">
+            </form>
+        </fieldset>
+    </div>
+</body>
+</html>
