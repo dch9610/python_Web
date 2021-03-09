@@ -1,0 +1,44 @@
+<!-- 상단 메뉴 부분 -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top shadow-lg">
+	<a class="navbar-brand" href="main">Pusan Univ.</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+	        data-target="#navMenu">
+		<span class="navbar-toggler-icon"></span>        
+	</button>
+	<div class="collapse navbar-collapse" id="navMenu">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a href="board_main?board_idx=1" class="nav-link">자유게시판</a>
+			</li>
+			<li class="nav-item">
+				<a href="board_main?board_idx=2" class="nav-link">유머게시판</a>
+			</li>
+			<li class="nav-item">
+				<a href="board_main?board_idx=3" class="nav-link">정치게시판</a>
+			</li>
+			<li class="nav-item">
+				<a href="board_main?board_idx=4" class="nav-link">스포츠게시판</a>
+			</li>
+		</ul>
+		
+		<ul class="navbar-nav ml-auto">
+			<!-- 로그인 안한경우 출력되는 화면 -->
+			{% if session.get('login_user_idx') == None%}
+			<li class="nav-item">
+				<a href="user_login" class="nav-link">로그인</a>
+			</li>
+			<li class="nav-item">
+				<a href="user_join" class="nav-link">회원가입</a>
+			</li>
+			<!-- 로그인 한경우 출력되는 화면 -->
+			{%else%}
+			<li class="nav-item">
+				<a href="user_modify" class="nav-link">정보수정</a>
+			</li>
+			<li class="nav-item">
+				<a href="user_logout" class="nav-link">로그아웃</a>
+			</li>
+			{%endif%}
+		</ul>
+	</div>
+</nav>
