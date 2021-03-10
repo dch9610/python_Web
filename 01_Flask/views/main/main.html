@@ -19,10 +19,12 @@
 	<!-- 게시판 미리보기 부분 -->
 	<div class="container" style="margin-top:100px">
 		<div class="row">
+			<!-- board_data를 받아와 반복문 -->
+			{% for board_idx, board_name in board_data%}
 			<div class="col-lg-6" style="margin-top:20px">
 				<div class="card shadow">
 					<div class="card-body">
-						<h4 class="card-title">자유게시판</h4>
+						<h4 class="card-title">{{board_name}}</h4>
 						<table class="table table-hover" id='board_list'>
 							<thead>
 								<tr>
@@ -32,174 +34,28 @@
 								</tr>
 							</thead>
 							<tbody>
+								<!-- content_list 값 불러온 후 반복문 실행 -->
+								{% for row in content_list[board_idx - 1] %}
 								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
+									<!-- index 번호를 지정하여 해당 값을 출력 -->
+									<td class="text-center">{{row[0]}}</td>
+									<!-- 해당 글이 나오게 설정 -->
+									<th><a href='board_read?content_idx={{row[0]}}&board_idx={{board_idx}}&page=1'>{{row[1]}}</a></th>
+									<td class="text-center d-none d-xl-table-cell">{{row[3]}}</td>
+
 								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
+								{% endfor %}
+								
 							</tbody>
 						</table>
 
-						<a href="board_main" class="btn btn-primary">더보기</a>
+						<!-- 1번째 게시판으로 이동하게끔 설정 -->
+						<a href="board_main?board_idx={{board_idx}}" class="btn btn-primary">더보기</a>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-6" style="margin-top:20px">
-				<div class="card shadow">
-					<div class="card-body">
-						<h4 class="card-title">유머게시판</h4>
-						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th class="text-center w-25">글번호</th>
-									<th>제목</th>
-									<th class="text-center w-25 d-none d-xl-table-cell">작성날짜</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-							</tbody>
-						</table>
-
-						<a href="board_main" class="btn btn-primary">더보기</a>
-					</div>
-				</div>
-
-			</div>
-			<div class="col-lg-6" style="margin-top:20px">
-				<div class="card shadow">
-					<div class="card-body">
-						<h4 class="card-title">정치게시판</h4>
-						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th class="text-center w-25">글번호</th>
-									<th>제목</th>
-									<th class="text-center w-25 d-none d-xl-table-cell">작성날짜</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-							</tbody>
-						</table>
-
-						<a href="board_main" class="btn btn-primary">더보기</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6" style="margin-top:20px">
-				<div class="card shadow">
-					<div class="card-body">
-						<h4 class="card-title">스포츠게시판</h4>
-						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th class="text-center w-25">글번호</th>
-									<th>제목</th>
-									<th class="text-center w-25 d-none d-xl-table-cell">작성날짜</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-								<tr>
-									<td class="text-center">5</td>
-									<th><a href='board_read'>제목입니다</a></th>
-									<td class="text-center d-none d-xl-table-cell">2018-12-12</td>
-								</tr>
-							</tbody>
-						</table>
-
-						<a href="board_main" class="btn btn-primary">더보기</a>
-					</div>
-				</div>
-			</div>
+			{% endfor %}
+			
 		</div>
 	</div>
 
