@@ -1,9 +1,7 @@
 from database import connector
 
 # 게시판 정보 저장
-
-
-def insertBoardData(board_name):
+def insertBoardData(board_name) :
     # 쿼리문 작성
     sql = '''
             insert into board_table
@@ -20,13 +18,13 @@ def insertBoardData(board_name):
     conn.commit()
     # 데이터베이스 접속 종료
     conn.close()
-# -------------------------------------------------------------
 
 # 게시판 데이터 전체를 가져오는 함수
-def selectBoardDataAll():
+def selectBoardDataAll() :
     # 쿼리문 작성
     sql = '''
             select * from board_table
+            order by board_idx
           '''
     # 데이터베이스 접속
     conn = connector.get_connection()
@@ -39,10 +37,9 @@ def selectBoardDataAll():
     conn.close()
 
     return result
-# -------------------------------------------------------------
 
 # 게시판 정보 하나를 가져오는 함수
-def selectBoardDataOne(board_idx):
+def selectBoardDataOne(board_idx) :
     # 쿼리문 작성
     sql = '''
             select * from board_table
@@ -60,11 +57,9 @@ def selectBoardDataOne(board_idx):
     conn.close()
 
     return result
-# -------------------------------------------------------------
-
 
 # 게시판 정보를 수정하는 함수
-def updateBoardData(board_name, board_idx):
+def updateBoardData(board_name, board_idx) :
     # 쿼리문 작성
     sql = '''
             update board_table
@@ -81,11 +76,9 @@ def updateBoardData(board_name, board_idx):
     conn.commit()
     # 데이터 베이스 접속 해제
     conn.close()
-# -------------------------------------------------------------
-
 
 # 게시판 정보를 삭제하는 함수
-def deleteBoardData(board_idx):
+def deleteBoardData(board_idx) :
     # 쿼리문 작성
     sql = '''
             delete from board_table
@@ -101,3 +94,5 @@ def deleteBoardData(board_idx):
     conn.commit()
     # 데이터 베이스 접속 해제
     conn.close()
+
+
