@@ -22,23 +22,21 @@
 		</ul>
 		
 		<ul class="navbar-nav ml-auto">
-			<!-- 로그인 안한경우 출력되는 화면 -->
-			{% if session.get('login_user_idx') == None%}
+			{% if session.get('login_user_idx') == None %}
 			<li class="nav-item">
 				<a href="user_login" class="nav-link">로그인</a>
 			</li>
 			<li class="nav-item">
 				<a href="user_join" class="nav-link">회원가입</a>
 			</li>
-			<!-- 로그인 한경우 출력되는 화면 -->
-			{%else%}
+			{% else %}
 			<li class="nav-item">
 				<a href="user_modify" class="nav-link">정보수정</a>
 			</li>
 			<li class="nav-item">
 				<a href="user_logout" class="nav-link">로그아웃</a>
 			</li>
-			{%endif%}
+			{% endif %}
 		</ul>
 	</div>
 </nav>
