@@ -22,17 +22,19 @@
 			<div class="col-sm-6">
 				<div class="card shadow">
 					<div class="card-body">
-						<!-- 파일 업로드 처리를 위해 multipart form 데이터로 설정한다. -->
+						<!-- 파일 업로드 처리를 위해 multipart form 데이터로 설정한다.-->
 						<form action="board_write_pro" method="post" enctype="multipart/form-data">
-							<!-- 게시글 인덱스 번호 -->
-							<input type='hidden' name = 'content_board_idx' value = '{{board_idx}}'/>
+
+							<!-- 게시판 인덱스 번호 -->
+							<input type='hidden' name='content_board_idx' value='{{board_idx}}' />
+
 							<div class="form-group">
 								<label for="content_subject">제목</label>
 								<input type="text" id="content_subject" name="content_subject" class="form-control" />
 							</div>
 							<div class="form-group">
-								<label for="content_text">내용</label>
-								<textarea id="content_text" name="content_text" class="form-control" rows="10"
+								<label for="context_text">내용</label>
+								<textarea id="context_text" name="context_text" class="form-control" rows="10"
 									style="resize:none"></textarea>
 							</div>
 							<div class="form-group">

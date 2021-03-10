@@ -31,8 +31,8 @@
 						</div>
 						<div class="form-group">
 							<label for="board_date">작성날짜</label>
-							<input type="text" id="board_date" name="board_date" class="form-control" value="{{content_data[1]}}"
-								disabled="disabled" />
+							<input type="text" id="board_date" name="board_date" class="form-control"
+								value="{{content_data[1]}}" disabled="disabled" />
 						</div>
 						<div class="form-group">
 							<label for="board_subject">제목</label>
@@ -44,17 +44,27 @@
 							<textarea id="board_content" name="board_content" class="form-control" rows="10"
 								style="resize:none" disabled="disabled">{{content_data[3]}}</textarea>
 						</div>
+
 						{% if content_data[4] != None %}
 						<div class="form-group">
 							<label for="board_file">첨부 이미지</label>
-							<img src="{{url_for('static', filename='upload/{{content_data[4]}}')}}" width="100%" />
+							<img src="{{url_for('static', filename='upload/' + content_data[4])}}" width="100%" />
 						</div>
 						{% endif %}
+
 						<div class="form-group">
 							<div class="text-right">
-								<a href="board_main?board_idx={{board_idx}}" class="btn btn-primary">목록보기</a>
-								<a href="board_modify" class="btn btn-info">수정하기</a>
-								<a href="board_main" class="btn btn-danger">삭제하기</a>
+								<!-- page를 추가함으로 다시 목록으로가도 해당 페이지가 나오게함 -->
+								<a href="board_main?board_idx={{board_idx}}&page={{page}}"
+									class="btn btn-primary">목록보기</a>
+
+								<!-- 로그인 idx와 작성자 idx가 같을경우에만 나타나게함 -->
+								{% if session.get('login_user_idx') == content_data[5] %}
+								<a href="board_modify?content_idx={{content_idx}}&board_idx={{board_idx}}&page={{page}}" class="btn btn-info">수정하기</a>
+								
+								<!-- content_idx 글을 삭제하기 위해 필요한 데이터, board_idx, page는 돌아가기 위해 필요한 데이터  -->
+								<a href="board_delete?content_idx={{content_idx}}&board_idx={{board_idx}}&page={{page}}" class="btn btn-danger">삭제하기</a>
+								{% endif %}
 							</div>
 						</div>
 					</div>

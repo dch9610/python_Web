@@ -31,56 +31,58 @@
 						</tr>
 					</thead>
 					<tbody>
-						{%for row in content_list%}
+						{% for row in content_list %}
 						<tr>
 							<td class="text-center d-none d-md-table-cell">{{row[0]}}</td>
-							<td><a href='board_read?content_idx=&board_idx={{row[0]}}&board_idx={{board_idx}}'>{{row[1]}}</a></td>
+							<!-- page값 추가 -->
+							<td><a
+									href='board_read?content_idx={{row[0]}}&board_idx={{board_idx}}&page={{page}}'>{{row[1]}}</a>
+							</td>
 							<td class="text-center d-none d-md-table-cell">{{row[2]}}</td>
 							<td class="text-center d-none d-md-table-cell">{{row[3]}}</td>
 
 						</tr>
-						{%endfor%}
+						{% endfor %}
 					</tbody>
 				</table>
 
 				<div class="d-none d-md-block">
 					<ul class="pagination justify-content-center">
+						<!-- 시작 페이지가 1이면 이전 버튼은 나오지 않음 -->
+						{% if start_page != 1 %}
+						<!-- 처음 페이지 -->
 						<li class="page-item">
-							<a href="#" class="page-link">이전</a>
+							<a href="board_main?board_idx={{board_idx}}&page=1" class="page-link">처음</a>
 						</li>
 						<li class="page-item">
-							<a href="#" class="page-link">1</a>
+							<a href="board_main?board_idx={{board_idx}}&page={{start_page-1}}" class="page-link">이전</a>
 						</li>
+						{% endif %}
+
+						<!-- 페이지 번호 넘어가게 하기 -->
+						<!-- 조건에 맞게 active 활성화 -->
+						{% for idx in range(start_page, end_page+1) %}
+						{% if page == idx %}
+						<li class="page-item active">
+							<a href="board_main?board_idx={{board_idx}}&page={{idx}}" class="page-link">{{idx}}</a>
+						</li>
+						{% else %}
 						<li class="page-item">
-							<a href="#" class="page-link">2</a>
+							<a href="board_main?board_idx={{board_idx}}&page={{idx}}" class="page-link">{{idx}}</a>
 						</li>
+						{% endif %}
+						{% endfor %}
+
+
+						{% if end_page != page_cnt %}
 						<li class="page-item">
-							<a href="#" class="page-link">3</a>
+							<a href="board_main?board_idx={{board_idx}}&page={{end_page+1}}" class="page-link">다음</a>
 						</li>
+						<!-- 마지막 페이지 -->
 						<li class="page-item">
-							<a href="#" class="page-link">4</a>
+							<a href="board_main?board_idx={{board_idx}}&page={{page_cnt}}" class="page-link">마지막</a>
 						</li>
-						<li class="page-item">
-							<a href="#" class="page-link">5</a>
-						</li>
-						<li class="page-item">
-							<a href="#" class="page-link">6</a>
-						</li>
-						<li class="page-item">
-							<a href="#" class="page-link">7</a>
-						</li>
-						<li class="page-item">
-							<a href="#" class="page-link">8</a>
-						</li>
-						<li class="page-item">
-							<a href="#" class="page-link">9</a>
-						</li>
-						<li class="page-item">
-							<a href="#" class="page-link">10</a>
-						</li>
-						<li class="page-item">
-							<a href="#" class="page-link">다음</a>
-						</li>
+						{% endif %}
 					</ul>
 				</div>
 
