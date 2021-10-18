@@ -1,0 +1,87 @@
+<!--태그의 기능을 확장하기 위해 '속성'을 사용할 수 있습니다.-->
+
+
+<!-- 
+<이미지삽입 소스위치='img/오징어 게임.jpg' width="400" height="300" 대체텍스트='오징어 게임 복장'/>
+<의미없는분할 태그별명="name"> 오징어 게임 </의미없는분할> 
+-->
+
+
+<!-- 부모와 자식요소 -->
+<!-- 태그A가 태그B의 콘텐츠로 사용되면, 태그B는 태그A의 부모요소
+     태그A는 태그B의 자식요소 -->
+
+<!-- 
+<섹션영역 태그별명='cloth'>
+    <주제1>쇼핑 목록</주제1>
+    <순서없는목록>
+        <항목>신발</항목>
+        <항목>옷</항목>
+        <항목>가방</항목>
+    </순서없는목록>
+</섹션영역>
+ -->
+
+
+
+ <!-- 빈 태그 -->
+ <!-- '/'가 없는 빈 태그 -->
+ <!-- '/'가 있는 빈 태그 (XHTML버전)-->
+ <!-- 혼용해서 사용하지만 않으면 된다 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- 문자 정보-->
+    <meta name="author" content="홍길동"> <!-- 작업자 정보-->
+    <meta name="description" content="우리 사이트가 최고"> <!-- 내용설명-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shop List</title>
+
+    <style>
+        img{
+            width: 400px;
+            height: 300px;
+        }
+        p{
+            font-size:20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="cloth">
+        <h1>쇼핑 목록</h1>
+        <ul>
+            <li>신발</li>
+            <li>옷</li>
+            <li>가방</li>
+        </ul>
+        <img src='img/오징어 게임.jpg' alt='오징어 게임 복장'/>
+        <div class="name">오징어 게임</div>
+        <h2>웹표준 검사기</h2>
+            <p> https://validator.w3.org/#validate_by_uplo</p>
+    </section>
+</body>
+</html>
+
+
+<!-- 
+<!DOCTYPE html> -- 마크업 언어에서 문서 형식을 정의
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> -- 문자 인코딩 방식
+    <link rel='stylesheet' href="./css/main.css"> -- 외부문서를 연결할 때 사용
+    <외부문서연결 관계 = "css" 문서경로 = "./css/main.css"
+    문서의 정보
+</head>
+<body>
+    <div></div> == 명확한 의미를 가지지 않기 때문에 특정 범위를 묶는 용도로 사용
+</body>
+</html>
+ -->
+
+
+
+
