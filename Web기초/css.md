@@ -82,3 +82,53 @@ div {
 </pre>
 
 ---
+## 속성
+크기, 여백, 색상 같은 눈에 보이는 스타일을 지정
+
+### 크기
+- width(가로 너비) : 
+요소의 가로 너비를 지정, 단위는 px(pixels)을 사용
+- height (세로 너비) : 요소의 세로 너비를 지정합니다.
+- font-size (글자 크기) :
+요소 내용 (Text)의 글자 크기를 지정합니다.
+<pre>
+div {
+    width : 200px;
+    height : 200px;
+    font-size :20px;
+}
+</pre>
+
+### 여백
+- margin(요소의 바깥 여백) : 
+바깥 여백은 요소와 요소 사이의 여백(거리, 공간)을 생성할 때 사용
+- padding(요소의 내부 여백) : 
+요소의 내부 여백을 지정합니다. 내부 여백은 자식 요소를 감싸는 여백을 의미합니다.
+
+<pre>
+div{
+    margin : 20px; # 요소바깥여백 
+    margin-top : 20px; # 요소바깥여백-위쪽
+    margin-right : 20px; # 요소바깥여백-오른쪽
+    margin-bottom : 20px; # 요소바깥여백-아래쪽
+    margin-left : 20px; # 요소바깥여백-왼쪽
+
+    padding : 20px; # 요소내부여백
+    padding-top : 20px; # 요소내부여백-위쪽
+    padding-right : 20px; # 요소내부여백-오른쪽
+    padding-bottom : 20px; # 요소내부여백-아래쪽
+    padding-left : 20px; # 요소내부여백-왼쪽
+
+}
+</pre>
+
+### 색상
+- color(글자 색상) : 요소 내용의 글자 색상을 지정합니다.
+- background(요소 색상) : 요소의 배경 색상을 지정
+
+<pre>
+div {
+  color: red;
+  background-color: red;
+}
+</pre>
