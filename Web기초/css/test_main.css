@@ -1,0 +1,48 @@
+/* 크기 초기화 */
+body{
+    margin:0;
+    padding: 0;
+}
+
+.header{
+    background: white;
+     /* 실선 만들기 */
+     border-bottom: 1px solid lightgray;
+}
+
+.container{
+    width: 980px;
+    margin: auto;  /*중앙으로 모와준다.*/
+    padding: 15px 0px;
+}
+
+.container-left{
+}
+
+.logo{
+    width: 20px;
+    float: left;
+    margin-right: 50px;
+}
+/* html의 구조에 맞게 CSS 작성 순서를 맞춰야 유지보수에 좋음 */
+/* logo 안에 있는 img 태그를 사용 */
+.logo img{
+    display: block; /* 이미지뒤 배경을 없애줌*/
+}
+
+.menu{
+    float: left;
+}
+
+.menu-item{
+    float: left; /*수평으로 맞춰준다.*/
+    padding: 12px 10px; /*상하 12px, 좌우10px*/
+    /* margin-right: 10px; */
+}
+
+/*가상요소 선택자*/
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
