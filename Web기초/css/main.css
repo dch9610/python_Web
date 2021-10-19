@@ -1,7 +1,24 @@
-div{
-    color: red;
+.box{
+    background: red;
+    font-size: 20px;
+}
+.box1{
+    width: 200px;
+    height: 150px;
+    background: red;
+}
+
+.box2{
+    color:white;
+    width: 250px;
+    height: 200px;
+    background: blue;
 }
 
 p{
     color:brown;
+}
+
+.title{
+    color: blue;
 }
