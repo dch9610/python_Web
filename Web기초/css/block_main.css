@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    background: red;
+    width: 100px;
+    height: 50px;
+    margin: 20px;
+    padding: 20px;
+
+    /* 블럭 요소를 인라인 요소로 바꾸는 기능  */
+    display: inline;
+
+}
+
+span{
+    background: blue;
+    width: 200px;
+    height: 200px;
+    
+    /* 인라인 요소를 블럭요소로 바꾸는 기능  */
+    display: inline;
+
+    /* margin: 20px; */
+
+    /* 아래도 여백이 생기는거 같지만 실질적으로 생성되지는 않음 */
+    /* padding: 20px;  */
+
+}
